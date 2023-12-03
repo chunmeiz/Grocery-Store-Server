@@ -28,7 +28,7 @@ exports.updateEmployeeItem = async (req, res) => {
   try {
     const updatedEmployeeItem = await Employees.findByIdAndUpdate(req.params.id, req.body, { new: true });
     // res.json(updatedEmployeeItem);
-    res.status(200).json({updatedEmployeeItem: updatedEmployeeItem, message: 'Update successfully'} );
+    res.status(200).json({updatedItem: updatedEmployeeItem, message: 'Update successfully'} );
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
