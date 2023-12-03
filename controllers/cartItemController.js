@@ -28,7 +28,7 @@ exports.updateCartsItem = async (req, res) => {
   try {
     const updatedCartsItem = await Carts.findByIdAndUpdate(req.params.id, req.body, { new: true });
     // res.json(updatedCartsItem);
-    res.status(200).json({updatedCartsItem: updatedCartsItem, message: 'Update successfully'} );
+    res.status(200).json({updatedItem: updatedCartsItem, message: 'Update successfully'} );
   } catch (err) {
     res.status(400).json({ error: err.message });
   }
